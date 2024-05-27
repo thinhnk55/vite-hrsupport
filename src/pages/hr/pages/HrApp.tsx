@@ -2,12 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CheckInButton from "../components/ClockInButton";
 import CheckOutButton from "../components/ClockOutButton";
 import TimeCard from "../components/TimeCard";
-import {
-  UserInfo,
-  clock,
-  selectUser,
-  updateUserInfo,
-} from "../redux/userSlice";
+import { UserInfo, selectUser, updateUserInfo } from "../redux/userSlice";
 import WorkCard from "../components/WorkCard";
 import { useEffect } from "react";
 import { fetchClockIn, fetchClockOut, fetchUserInfo } from "../redux/fetch";
