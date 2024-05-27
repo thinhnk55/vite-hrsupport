@@ -1,4 +1,4 @@
-import { UserInfo, WorkShift } from "./userSlice";
+import { UserInfo } from "./userSlice";
 import WebApp from "@twa-dev/sdk";
 import {
   apiCommonError,
