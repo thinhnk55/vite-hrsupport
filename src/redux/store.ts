@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { userSlice } from "../pages/hr/redux/userSlice";
+import { localReducer } from "../pages/hr/redux/localSlice";
+import { userReducer } from "../pages/hr/redux/userSlice";
 
 export const store = configureStore({
   reducer: {
-    user: userSlice.reducer,
+    user: userReducer,
+    local: localReducer,
   },
 });
 

@@ -8,6 +8,21 @@ import {
 
 const base_url = "https://api.congdongaoe.com/hr";
 const token = WebApp.initData === "" ? "test_token" : WebApp.initData;
+export var IP_ADDRESS = "";
+
+export const fetchIPAddress = async () => {
+  try {
+    // Replace with actual API call to fetch IP address
+    const response = await fetch("https://api.ipify.org");
+    if (!response.ok) {
+      apiReponseFailed();
+    }
+    const data = await response.text();
+    return data;
+  } catch (error) {
+    apiExceptionError();
+  }
+};
 
 export const fetchUserInfo = async () => {
   try {
@@ -15,6 +30,7 @@ export const fetchUserInfo = async () => {
       method: "GET",
       headers: {
         token: token,
+        ip: IP_ADDRESS,
       },
     });
     if (!response.ok) {
@@ -32,12 +48,13 @@ export const fetchUserInfo = async () => {
   }
 };
 
-export const fetchClockIn = async () => {
+export const fetchClockIn = async (ip: string) => {
   try {
     const response = await fetch(`${base_url}/clock/in`, {
       method: "GET",
       headers: {
         token: token,
+        ip: ip,
       },
     });
     if (!response.ok) {
@@ -55,12 +72,13 @@ export const fetchClockIn = async () => {
   }
 };
 
-export const fetchClockOut = async () => {
+export const fetchClockOut = async (ip: string) => {
   try {
     const response = await fetch(`${base_url}/clock/out`, {
       method: "GET",
       headers: {
         token: token,
+        ip: ip,
       },
     });
     if (!response.ok) {

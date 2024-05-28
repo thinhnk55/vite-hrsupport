@@ -36,14 +36,16 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     updateUserInfo: (state, action) => {
-      state.user_id = action.payload.user_id;
-      state.total_time = action.payload.total_time;
-      state.late_count = action.payload.late_count;
-      state.work_shift = action.payload.work_shift;
+      if (action.payload) {
+        state.user_id = action.payload.user_id;
+        state.total_time = action.payload.total_time;
+        state.late_count = action.payload.late_count;
+        state.work_shift = action.payload.work_shift;
+      }
     },
   },
 });
 
 export const { updateUserInfo } = userSlice.actions;
 export const selectUser = (state: RootState) => state.user;
-export default userSlice.reducer;
+export const userReducer = userSlice.reducer;
