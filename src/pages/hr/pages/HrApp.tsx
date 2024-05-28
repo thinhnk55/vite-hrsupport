@@ -45,7 +45,6 @@ function HrApp() {
   const handleClockIn = () => {
     const fetchData = async () => {
       try {
-        const ip = "";
         const data = await fetchClockIn(local.ip);
         dispatch(updateUserInfo(data));
       } catch (error) {
