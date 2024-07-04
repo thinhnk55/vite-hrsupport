@@ -6,7 +6,7 @@ import {
   apiReponseFailed,
 } from "../../../util/toast";
 
-const base_url = "https://api.congdongaoe.com/hr";
+const base_url = "https://api.godoo.asia/hr";
 const token = WebApp.initData === "" ? "test_token" : WebApp.initData;
 export var IP_ADDRESS = "";
 
